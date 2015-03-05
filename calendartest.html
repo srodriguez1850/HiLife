@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimum Setup</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/calendar.min.css">
+</head>
+<body>
+
+    <div id="calendar"></div>
+
+    <script type="text/javascript" src="js/vendor/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/calendar.min.js"></script>
+    <script type="text/javascript">
+        var calendar = $('#calendar').calendar({
+                events_source: [
+                {
+                    "id": 293,
+                    "title": "Event 1",
+                    "url": "http://example.com",
+                    "class": "event-important",
+                    "start": 12039485678000,
+                    "end": 1234576967000
+                }
+            ]});      
+    </script>
+</body>
+</html>
