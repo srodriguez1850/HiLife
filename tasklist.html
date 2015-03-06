@@ -19,48 +19,59 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
-        /* STYLE HERE */
+            .nav-tabs > li, .nav-pills > li {
+                float:none;
+                display:inline-block;
+            }
+
+            .nav-tabs, .nav-pills {
+                text-align:center;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/tasklist.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <div role="tabpanel" role="tablist">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#inprogress" aria-controls="In Progress" role="tab" data-toggle="tab">In Progress</a></li>
+                <li role="presentation"><a href="#complete" aria-controls="Complete" role="tab" data-toggle="tab">Complete</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="inprogress">
+                <div class="container-fluid">
+                    <ul>
+                        <li> Read 50 pages </li>
+                        <li> Something Something Dark Side </li>
+                    </ul>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="complete">
+                <div class="container-fluid">
+                    <ul>
+                        <li> Be a Bad ass </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#inprogress a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+            $('#complete a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/inobounce.min.js"></script>
         <script src="js/links.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/tasklist.js"></script>
-
-        <!-- AHREN CONTENT  -->
-
-        <div class = "tabs">
-            <ul class = "tab-links">
-              <li class = "active"><a href ="#tab1">Tab #1</a></li>
-              <li><a href = "#tab2">Tab #2</a></li>
-            </ul>
-
-            <div class = "tab-content">
-              <div id = "tab1" class = "tab active">
-                <h1> Tasks and Goals in Progress </h1>
-                <ul>
-                  <li> Read 50 pages </li>
-                  <li> Something Something Dark Side </li>
-                </ul>
-              </div>
-
-              <div id = "tab2" class = "tab">
-                <h1> Tasks and Goals Complete </h1>
-                <ul>
-                  <li> Be a Bad ass </li>
-                </ul>
-              </div>
-            </div>
-        </div>
-
     </body>
 </html>
