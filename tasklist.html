@@ -19,16 +19,29 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
+            body {
+                padding-top: 10px;
+            }
             .nav-tabs > li, .nav-pills > li {
                 float:none;
                 display:inline-block;
             }
-
             .nav-tabs, .nav-pills {
                 text-align:center;
             }
+            .slider {
+                position: relative;
+                left: 13px;
+            }
+            .goalAmount {
+                position: relative;
+                right: 25px;
+                top: 25px;
+                font-size: 48px;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/bootstrap-slider.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -48,16 +61,58 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="inprogress">
                 <div class="container-fluid">
-                    <ul>
-                        <li> Read 50 pages </li>
-                        <li> Something Something Dark Side </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h4>Read 50 Pages</h4>
+                            <input id="slider1" type="text" data-slider-value="37" data-slider-ticks="[0, 50]" data-slider-ticks-snap-bounds="0" data-slider-ticks-labels="['0', '50']"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <span class="goalAmount" id="slider1data">37</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h4>Run 50 Miles</h4>
+                            <input id="slider2" type="text" data-slider-value="17" data-slider-tooltip="hide" data-slider-ticks="[0, 10, 20, 30, 40, 50]" data-slider-ticks-snap-bounds="0" data-slider-ticks-labels="['0', '10', '20', '30', '40', '50']"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <span class="goalAmount" id="slider2data">17</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h4>Study 2 Hours</h4>
+                            <input id="slider3" type="text" data-slider-value="1" data-slider-tooltip="hide" data-slider-ticks="[0, 1, 2]" data-slider-ticks-snap-bounds="0" data-slider-ticks-labels="['0', '1', '2']"/>
+                        </div>
+                        <div class="col-xs-2">
+                            <span class="goalAmount" id="slider3data">1</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="complete">
-                <div class="container-fluid">
-                    <ul>
-                        <li> Be a Bad ass </li>
+                <div class="panel panel-default">
+                    <div class="panel-heading">2015 - 3 goals</div>  
+                    <ul class="list-group">
+                        <li class="list-group-item">Learned how to lift.</li>
+                        <li class="list-group-item">Finished a program in C++.</li>
+                        <li class="list-group-item">Learned to be a badass.</li>
+                    </ul>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">2014 - 3 goals</div>  
+                    <ul class="list-group">
+                        <li class="list-group-item">Spent more time with parents.</li>
+                        <li class="list-group-item">Finished a quarter above a 3.5 GPA.</li>
+                        <li class="list-group-item">Ran 1 mile.</li>
+                    </ul>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">2013 - 1 goal</div>  
+                    <ul class="list-group">
+                        <li class="list-group-item">Read a book.</li>
                     </ul>
                 </div>
             </div>
@@ -66,14 +121,38 @@
             $('#inprogress a').click(function (e) {
                 e.preventDefault()
                 $(this).tab('show')
-            })
+            });
             $('#complete a').click(function (e) {
                 e.preventDefault()
-                $(this).tab('show')
-            })
+                $(this).tab('show') 
+            });
         </script>
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/bootstrap-slider.min.js"></script>
+        <script>
+            var mySlider1 = $("#slider1").slider({
+                ticks: [0, 50],
+                ticks_labels: ['0', '50']
+            });
+            var mySlider2 = $("#slider2").slider({
+                ticks: [0, 10, 20, 30, 40, 50],
+                ticks_labels: ['0', '10', '20', '30', '40', '50']
+            });
+            var mySlider3 = $("#slider3").slider({
+                ticks: [0, 1, 2],
+                ticks_labels: ['0', '1', '2']
+            });
+            $("#slider1").on("slide", function(slideEvt) {
+                $("#slider1data").text(slideEvt.value);
+            });
+            $("#slider2").on("slide", function(slideEvt) {
+                $("#slider2data").text(slideEvt.value);
+            });
+            $("#slider3").on("slide", function(slideEvt) {
+                $("#slider3data").text(slideEvt.value);
+            });
+        </script>
         <script src="js/inobounce.min.js"></script>
         <script src="js/links.js"></script>
         <script src="js/main.js"></script>
