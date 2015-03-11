@@ -7,27 +7,3 @@
 .btn-link:hover {
 	text-decoration: none;
 }
-
-.size {
-	width: 9em;
-	height: 8em;
-}
-
-.big {
-	width: 12em;
-	height: 12em;
-}
-
-h1 {
-	font-family: Helvetica;
-	font-size: 1em;
-	font-weight: bold;
-}
-h2 {
-	font-family: Verdana;
-	font-size: 1em;
-}
-p {
-	font-family: Georgia;
-	font-size: 1em;
-}
