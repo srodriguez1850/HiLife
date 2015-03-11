@@ -13,6 +13,11 @@
 	height: 8em;
 }
 
+.big {
+	width: 12em;
+	height: 12em;
+}
+
 h1 {
 	font-family: Helvetica;
 	font-size: 1em;
