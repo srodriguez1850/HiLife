@@ -9,17 +9,18 @@
 }
 
 .size {
-	width: 100%;
-	height: 100%;
+	width: 8em;
+	height: 8em;
 }
 
 h1 {
 	font-family: Helvetica;
-	font-size: 1em;
+	font-size: 3em;
+	font-weight: bold;
 }
 h2 {
 	font-family: Verdana;
-	font-size: 1em;
+	font-size: 2em;
 }
 p {
 	font-family: Georgia;
