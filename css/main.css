@@ -9,6 +9,16 @@
 }
 
 .size {
-	width: 1em;
-	height: 1em;
+	width: 10em;
+	height: 10em;
+}
+
+h1 {
+	font-family:Helvetica;
+}
+h2 {
+	font-family:Verdana;
+}
+p {
+	font-family:Georgia;
 }
