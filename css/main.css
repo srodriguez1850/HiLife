@@ -14,11 +14,14 @@
 }
 
 h1 {
-	font-family:Helvetica;
+	font-family: Helvetica;
+	font-size: 5em;
 }
 h2 {
-	font-family:Verdana;
+	font-family: Verdana;
+	font-size: 3em;
 }
 p {
-	font-family:Georgia;
+	font-family: Georgia;
+	font-size: 2em;
 }
