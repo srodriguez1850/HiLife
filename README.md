@@ -7,4 +7,4 @@ HiLife is a conceptual web application that assists college students in recordin
 21FEB15: Initial commit/hosting
 5MAR15: Proof-of-Concept completed
 ```
-Live at <http://srodriguez1850.github.io/HiLife/>
+Live at *http://srodriguez1850.github.io/HiLife/*
